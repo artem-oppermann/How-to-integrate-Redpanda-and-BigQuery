@@ -27,7 +27,7 @@ def produce_message(data):
     # Trigger any available delivery report callbacks from previous produce() calls
     producer.poll(0)
 
-    # Asynchronously produce a message, the delivery report callback will be triggered once the message has been successfully produced or failed
+    # Asynchronously produce a message; the delivery report callback will be triggered once the message has been successfully produced or failed
     producer.produce(topic=topic_name, value=json.dumps(data), callback=delivery_report)
 
 # Produce messages from the data file
